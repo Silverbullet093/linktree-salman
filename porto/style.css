@@ -300,12 +300,121 @@ footer {
 .social-links a { color: white; margin: 0 15px; transition: 0.3s; }
 .social-links a:hover { color: var(--primary-glow); }
 
-/* Mobile Responsive */
+/* ====== MOBILE RESPONSIVE OPTIMIZATION ====== */
+
 @media (max-width: 768px) {
-    .profile-card { flex-direction: column; text-align: center; padding: 30px; }
-    .profile-text h2 { text-align: center; font-size: 2rem; }
-    .profile-text p { text-align: center; }
-    .navbar { flex-direction: column; padding: 10px; }
-    .nav-links { margin-top: 10px; }
-    .nav-links a { margin: 0 10px; font-size: 0.7rem; }
+    /* 1. Navbar: Dibuat lebih ringkas agar tidak memakan tempat */
+    .navbar {
+        flex-direction: column;
+        padding: 15px 5%;
+        height: auto;
+    }
+
+    .logo-area {
+        margin-bottom: 10px;
+    }
+
+    .logo-img {
+        width: 50px; /* Logo lebih kecil di HP */
+    }
+
+    .logo-area h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        margin: 0 8px;
+        font-size: 0.8rem;
+    }
+
+    /* 2. Sections: Padding disesuaikan agar konten tidak terlalu mepet ke pinggir */
+    .section {
+        padding: 80px 20px;
+        min-height: auto; /* Agar tidak terlalu kosong di layar tinggi */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    /* 3. Profile Card: Foto di atas, teks di bawah */
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-text h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .profile-text p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* 4. About Container: Mengurangi padding yang terlalu besar (60px) */
+    .about-container {
+        padding: 30px 20px !important;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    /* 5. Grid Container: Paksa menjadi 1 kolom di HP */
+    .grid-container {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 0;
+    }
+
+    /* 6. Fantasy Card: Tinggi disesuaikan */
+    .fantasy-card {
+        height: 300px;
+    }
+
+    .card-actions {
+        opacity: 1; /* Di HP (touch) sebaiknya tombol selalu muncul */
+        transform: translateY(0);
+    }
+
+    /* 7. Tech Stack: Ikon diperkecil agar tidak berantakan */
+    .tech-icons {
+        font-size: 2.5rem;
+        gap: 20px;
+    }
+
+    /* 8. Footer */
+    footer {
+        padding: 30px 20px;
+    }
+}
+
+/* Tambahan untuk layar sangat kecil (seperti iPhone SE) */
+@media (max-width: 480px) {
+    .nav-links a {
+        font-size: 0.7rem;
+    }
+    
+    .profile-text h2 {
+        font-size: 1.5rem;
+    }
 }

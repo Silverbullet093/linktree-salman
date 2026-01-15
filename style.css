@@ -196,3 +196,56 @@ footer {
 footer span {
     color: var(--primary-glow);
 }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Untuk layar tablet atau layar yang lebih kecil dari 600px */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 95%; /* Lebih lebar sedikit agar ruang tidak terbuang */
+        padding: 30px 15px;
+        border-radius: 20px; /* Radius lebih kecil di HP agar tidak terlalu membulat */
+    }
+
+    .profile-wrapper {
+        width: 110px;
+        height: 110px;
+    }
+
+    h1 {
+        font-size: 1.25rem; /* Ukuran teks nama dikecilkan */
+        letter-spacing: 2px;
+    }
+
+    .fantasy-card {
+        padding: 15px 20px; /* Padding kartu dipersempit agar hemat ruang */
+    }
+    
+    .text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Untuk layar HP yang sangat kecil (contoh: iPhone SE atau Galaxy Fold) */
+@media screen and (max-width: 360px) {
+    h1 {
+        font-size: 1.1rem;
+    }
+
+    .profile-wrapper {
+        width: 90px;
+        height: 90px;
+    }
+
+    .icon {
+        font-size: 1.1rem;
+        width: 30px;
+    }
+}
+
+/* Memastikan partikel tetap memenuhi layar saat rotasi perangkat */
+canvas.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
