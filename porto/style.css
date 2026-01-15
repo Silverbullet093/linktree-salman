@@ -31,15 +31,16 @@ body {
 
 /* ====== Navigation ====== */
 .navbar {
-    background: rgba(5, 6, 15, 0.8);
+    background: rgba(5, 6, 15, 0.9);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(123, 47, 247, 0.3);
-    padding: 1rem 5%;
+    padding: 0.8rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     width: 100%;
+    top: 0;
     z-index: 1000;
 }
 
@@ -162,7 +163,17 @@ h2 {
     transition: 0.5s ease;
     cursor: pointer;
 }
-
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr !important; /* Paksa 1 kolom */
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .fantasy-card {
+        height: 280px; /* Pendekkan sedikit di mobile */
+    }
+}
 .card-bg {
     position: absolute;
     top: 0; left: 0;
@@ -303,15 +314,15 @@ footer {
 /* ====== MOBILE RESPONSIVE OPTIMIZATION ====== */
 
 @media (max-width: 768px) {
-    /* 1. Navbar: Dibuat lebih ringkas agar tidak memakan tempat */
     .navbar {
-        flex-direction: column;
-        padding: 15px 5%;
-        height: auto;
+        padding: 10px 5%;
+        flex-wrap: wrap; /* Biar menu turun ke bawah jika layar sempit */
     }
 
     .logo-area {
-        margin-bottom: 10px;
+        justify-content: center;
+        width: 100%; /* Logo di tengah pada mobile */
+        margin-bottom: 5px;
     }
 
     .logo-img {
@@ -323,17 +334,15 @@ footer {
     }
 
     .nav-links {
-        display: flex;
-        flex-wrap: wrap;
+        width: 100%;
         justify-content: center;
-        gap: 10px;
-        margin-top: 5px;
+        gap: 8px;
     }
 
     .nav-links a {
+        font-size: 0.75rem; /* Perkecil font menu */
         margin-left: 0;
-        margin: 0 8px;
-        font-size: 0.8rem;
+        padding: 5px;
     }
 
     /* 2. Sections: Padding disesuaikan agar konten tidak terlalu mepet ke pinggir */
@@ -408,13 +417,33 @@ footer {
     }
 }
 
-/* Tambahan untuk layar sangat kecil (seperti iPhone SE) */
-@media (max-width: 480px) {
-    .nav-links a {
-        font-size: 0.7rem;
+/* Update Profile Card Mobile */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        padding: 40px 20px;
+        margin-top: 20px;
+        width: 95%; /* Jangan 100% agar ada jarak di kiri-kanan */
+        gap: 25px;
+    }
+
+    .profile-img {
+        width: 160px; /* Ukuran pas untuk HP */
+        height: 160px;
+    }
+
+    .profile-text h2 {
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .profile-text p {
+        text-align: center;
     }
     
-    .profile-text h2 {
-        font-size: 1.5rem;
+    /* Matikan animasi gerak di mobile agar tidak pusing/buggy */
+    .profile-card {
+        animation: none; 
     }
-}
+}   
