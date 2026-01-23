@@ -45,7 +45,7 @@ body {
 }
 
 .logo-area { display: flex; align-items: center; gap: 10px; }
-.logo-img { width: 85px; filter: drop-shadow(0 0 5px var(--primary-glow)); }
+.logo-img { width: 75px; filter: drop-shadow(0 0 5px var(--primary-glow)); }
 .logo-area h1 { font-family: 'Cinzel', serif; font-size: 1.7rem; color: #fff; }
 
 .nav-links a {
